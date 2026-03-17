@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Brutalist custom properties */
+:root {
+  --brutal-black: #0d0d0d;
+  --brutal-white: #ffffff;
+  --brutal-yellow: #F59E0B;
+  --brutal-red: #EF4444;
+  --brutal-gray: #6B7280;
+}
+
+/* Custom border width */
+@layer utilities {
+  .border-3 {
+    border-width: 3px;
+  }
+}
+
+/* Brutalist shadows */
+.shadow-brutal {
+  box-shadow: 4px 4px 0px 0px #ffffff;
+}
+
+.shadow-brutal-yellow {
+  box-shadow: 6px 6px 0px 0px #F59E0B;
+}
+
+/* Animations */
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateX(-10px) rotate(-2deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) rotate(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.4s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-card-in {
+  animation: card-in 0.3s ease-out forwards;
+  opacity: 0;
+}
+
+/* Global styles */
+body {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar for brutalist feel */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d0d0d;
+  border: 2px solid #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border: 2px solid #0d0d0d;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #F59E0B;
+}
+
+/* Selection style */
+::selection {
+  background: #F59E0B;
+  color: #0d0d0d;
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 3px solid #F59E0B;
+  outline-offset: 2px;
+}
+
+/* Drag and drop feedback */
+[draggable="true"] {
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+
+/* Input placeholder */
+input::placeholder {
+  color: #4B5563;
+  opacity: 1;
+}
+
+/* Mobile touch improvements */
+@media (hover: none) {
+  .group:hover .opacity-0 {
+    opacity: 1;
+  }
+}
